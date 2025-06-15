@@ -74,9 +74,6 @@ if [ "$USE_SIM_TIME" = "True" ]; then
     tmux select-window -t $SESSION:4
     tmux send-keys "ros2 topic pub -r 1 /$ROBOT_NAME/smarc/vehicle_health std_msgs/msg/Int8 '{data: 0}' " C-m
     tmux new-window -t $SESSION:5 -n 'bash'
-    # tmux new-window -t $SESSION:6 -n 'gui'
-    # tmux select-window -t $SESSION:6
-    # tmux send-keys "ros2 launch smarc_nodered smarc_nodered.launch robot_name:=$ROBOT_NAME" C-m
 else
     tmux send-keys "ros2 launch str_json_mqtt_bridge waraps_bridge.launch robot_name:=$ROBOT_NAME domain:=air realsim:=real broker_addr:=20.240.40.232 broker_port:=1884 context:=alars" C-m
 fi
