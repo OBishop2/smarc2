@@ -6,7 +6,7 @@ USE_SIM_TIME=True
 
 # New variables for wasp_bt.launch and wasp_mqtt_agent.launch
 AGENT_TYPE=air
-PULSE_RATE=1
+PULSE_RATE=1.0
 LINK_SUFFIX=_gt
 
 # create a tmux session with a name
