@@ -5,3 +5,8 @@ __pycache__
 
 mpc_codegen
 c_generated_code
+.gitignore
+scripts/unity_ros_bridge.sh
+scripts/smarc_bringups/scripts/dji_bringup.sh
+scripts/smarc_bringups/scripts/quad_bringup.sh
+scripts/unity_ros_bridge.sh
