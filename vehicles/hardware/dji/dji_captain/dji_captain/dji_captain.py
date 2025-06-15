@@ -109,6 +109,8 @@ class DjiCaptain():
         self._carrying_payload : bool = False
         self._battery_percent : float | None = None
 
+        
+
 
         topics = [PSDKTopics.__dict__[t].value for t in PSDKTopics.__members__.keys()]
         topics = ["/Quadrotor/  " + PSDKTopics.__dict__[t].value for t in PSDKTopics.__members__.keys()]
@@ -428,8 +430,12 @@ class DjiCaptain():
 
         self._joy_pub.publish(joy_msg)
 
-
-
+    def declare_node_parameters():
+        self.declare_parameter("p_gain_horiz", 0.0)
+        self.declare_parameter("d_gain_horiz", 0.0)
+        self.declare_parameter("p_gain_vert", 0.0)
+        self.declare_parameter("d_gain_vert", 0.0)
+        self.declare_parameter("output_limit", 0.4)
 
     def _rc_cb(self, msg: Joy):
         # if RC is touched by user, we give up control
